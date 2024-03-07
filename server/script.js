@@ -11,15 +11,15 @@ const build = async () => {
     // microchipped: false
     // Your code here
 
-    const newPuppy = Puppy.build({ 
-      name: 'Trudy',
-      ageYrs: 2,
-      weightLbs: 38,
-      breed: 'Brittany Spaniel',
-      microchipped: false
-    });
+    // const newPuppy = Puppy.build({ 
+    //   name: 'Trudy',
+    //   ageYrs: 2,
+    //   weightLbs: 38,
+    //   breed: 'Brittany Spaniel',
+    //   microchipped: false
+    // });
 
-    await newPuppy.save(); // save to db
+    // await newPuppy.save(); // save to db
   } catch (err) {
     throw err;
   }
@@ -39,7 +39,13 @@ const create = async () => {
     // microchipped: true
     // Your code here
 
-
+    await Puppy.create({
+      name: 'Beans',
+      ageYrs: 1.6,
+      weightLbs: 42,
+      breed: 'Bulldog',
+      microchipped: true
+    })
   } catch (err) {
     throw err;
   }
