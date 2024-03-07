@@ -11,7 +11,15 @@ const build = async () => {
     // microchipped: false
     // Your code here
 
-
+    const newPuppy = Puppy.build({ 
+      name: 'Trudy',
+      ageYrs: 2,
+      weightLbs: 38,
+      breed: 'Brittany Spaniel',
+      microchipped: false
+    });
+    
+    newPuppy.save(); // save to db
   } catch (err) {
     throw err;
   }
@@ -45,13 +53,13 @@ if (require.main === module) {
     await seedAllDB("db/dev.db");
     try {
       await build();
-    } catch(err) {
+    } catch (err) {
       console.error('There was an error thrown while building:');
       console.error(err);
     }
     try {
       await create();
-    } catch(err) {
+    } catch (err) {
       console.error('There was an error thrown while creating:');
       console.error(err);
     }
