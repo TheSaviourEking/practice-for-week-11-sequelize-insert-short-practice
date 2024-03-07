@@ -18,8 +18,8 @@ const build = async () => {
       breed: 'Brittany Spaniel',
       microchipped: false
     });
-    
-    newPuppy.save(); // save to db
+
+    await newPuppy.save(); // save to db
   } catch (err) {
     throw err;
   }

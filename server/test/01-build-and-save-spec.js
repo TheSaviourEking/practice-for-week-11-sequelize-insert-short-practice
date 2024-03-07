@@ -20,6 +20,7 @@ describe('Step 1: Build and Save', () => {
         expect(buildSpy).to.have.been.called();
         expect(createSpy).to.not.have.been.called();
         const trudy = await models.Puppy.findOne({ where: { name: 'Trudy' } });
+        console.log(trudy);
         expect(trudy.name).to.eq('Trudy');
         expect(trudy.ageYrs).to.eq(2);
         expect(trudy.breed).to.eq("Brittany Spaniel");
